@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script language="javascript" src="js/main.js"></script>
+		<script src="js/jquery-min.js"></script>
+		
+			<script>
+window.setInterval(refreshGadget, System.Gadget.Settings.readString("refreshTime"));
+var n = 1;
+function wait(msecs)
+{
+var start = new Date().getTime();
+var cur = start
+while(cur - start < msecs)
+{
+cur = new Date().getTime();
+}	
+} 
+function findPlayers() {
+var watchedPlayers1=new Array();
+var watchedPlayers2=new Array();
+var watchedPlayers3=new Array();
+var watchedPlayers4=new Array();
+var watchedPlayers5=new Array();
+//this is working and watched players array is populating correctly
+
+			if(System.Gadget.Settings.readString("p1s1" ) != ""){
+			 watchedPlayers1.push(System.Gadget.Settings.readString("p1s1"));
+			 }
+			 if(System.Gadget.Settings.readString("p2s1") != ""){
+			 watchedPlayers1.push(System.Gadget.Settings.readString("p2s1"));
+			 }
+			 if(System.Gadget.Settings.readString("p3s1" ) != ""){
+			 watchedPlayers1.push(System.Gadget.Settings.readString("p3s1"));
+			 }
+			//server2
+			if(System.Gadget.Settings.readString("p1s2" ) != ""){
+			 watchedPlayers2.push(System.Gadget.Settings.readString("p1s2"));
+			 }
+			 if(System.Gadget.Settings.readString("p2s2") != ""){
+			 watchedPlayers2.push(System.Gadget.Settings.readString("p2s2"));
+			 }
+			 if(System.Gadget.Settings.readString("p3s2") != ""){
+			 watchedPlayers2.push(System.Gadget.Settings.readString("p3s2"));
+			 }
+			 //server3
+			 if(System.Gadget.Settings.readString("p1s3") != ""){
+			 watchedPlayers3.push(System.Gadget.Settings.readString("p1s3"));
+			 }
+			 if(System.Gadget.Settings.readString("p2s3") != ""){
+			 watchedPlayers3.push(System.Gadget.Settings.readString("p2s3"));
+			 }
+			 if(System.Gadget.Settings.readString("p3s3" ) != ""){
+			 watchedPlayers3.push(System.Gadget.Settings.readString("p3s3"));
+			 }
+			 //server 4
+			 if(System.Gadget.Settings.readString("p1s4" ) != ""){
+			 watchedPlayers4.push(System.Gadget.Settings.readString("p1s4"));
+			 }
+			 if(System.Gadget.Settings.readString("p2s4") != ""){
+			 watchedPlayers4.push(System.Gadget.Settings.readString("p2s4"));
+			 }
+			 if(System.Gadget.Settings.readString("p3s4") != ""){
+			 watchedPlayers4.push(System.Gadget.Settings.readString("p3s4"));
+			 }
+			 //server 5
+			 if(System.Gadget.Settings.readString("p1s5" ) != ""){
+			 watchedPlayers5.push(System.Gadget.Settings.readString("p1s5"));
+			 }
+			 if(System.Gadget.Settings.readString("p2s5") != ""){
+			 watchedPlayers5.push(System.Gadget.Settings.readString("p2s5"));
+			 }
+			 if(System.Gadget.Settings.readString("p3s5") != ""){
+			 watchedPlayers5.push(System.Gadget.Settings.readString("p3s5"));
+			 }
+
+var shell = new ActiveXObject("WScript.Shell");
+var fso1, f1,f2,f3,f4,f5;
+var onlinePlayers=new Array();
+
+		for (x=0;x < watchedPlayers1.length; x++)
+		{
+			fso1 = new ActiveXObject("Scripting.FileSystemObject");
+			ts1 = fso1.OpenTextFile(System.Gadget.path + "\\serverfiles\\Server1\\players.html", 1, false, 0);
+			f1=ts1.ReadLine();
+			if(f1.indexOf(watchedPlayers1[x]) != -1){
+			onlinePlayers.push(watchedPlayers1[x]+" is crafting on "+System.Gadget.Settings.readString("server1name"));
+			}
+
+			
+		}
+		//watch server 2
+		for (x=0;x < watchedPlayers2.length; x++)
+		{
+			
+
+			ts2 = fso1.OpenTextFile(System.Gadget.path + "\\serverfiles\\Server2\\players.html", 1, false, 0);
+			f2=ts2.ReadLine();
+			if(f2.indexOf(watchedPlayers2[x]) != -1){
+			onlinePlayers.push(watchedPlayers2[x]+" is crafting on "+System.Gadget.Settings.readString("server2name"));
+			}
+
+			
+		}
+		//server 3
+		
+		for (x=0;x < watchedPlayers3.length; x++)
+		{
+			
+			ts3 = fso1.OpenTextFile(System.Gadget.path + "\\serverfiles\\Server3\\players.html", 1, false, 0);
+			f3=ts3.ReadLine();
+			if(f3.indexOf(watchedPlayers3[x]) != -1){
+			onlinePlayers.push(watchedPlayers3[x]+" is crafting on "+System.Gadget.Settings.readString("server3name"));
+			}
+
+			
+		}
+		//server 4
+		for (x=0;x < watchedPlayers4.length; x++)
+		{
+			ts4 = fso1.OpenTextFile(System.Gadget.path + "\\serverfiles\\Server4\\players.html", 1, false, 0);
+			f4=ts4.ReadLine();
+			if(f4.indexOf(watchedPlayers4[x]) != -1){
+			onlinePlayers.push(watchedPlayers4[x]+" is crafting on "+System.Gadget.Settings.readString("server4name"));
+			}
+		}
+		//server 5\
+		for (x=0;x < watchedPlayers5.length; x++)
+		{
+			
+			ts5 = fso1.OpenTextFile(System.Gadget.path + "\\serverfiles\\Server5\\players.html", 1, false, 0);
+			f5=ts5.ReadLine();
+			if(f5.indexOf(watchedPlayers5[x]) != -1){
+			onlinePlayers.push(watchedPlayers5[x]+" is crafting on "+System.Gadget.Settings.readString("server5name"));
+			}
+		}
+if(onlinePlayers.length > 0 ){
+var playersFound="";
+
+for(i=0; i < onlinePlayers.length; i++){
+playersFound += "\n"+onlinePlayers[i];
+}
+
+  
+    //old play sound command
+    //System.Sound.playSound(System.Gadget.path+"\\sounds\\portal.wav");
+	System.Sound.playSound(System.Gadget.Settings.readString("soundPath"));
+   shell.Popup("Craft-Control has found the following 'watched' player(s) currently playing Minecraft: \n"+playersFound,15,"Craft-Control - "+onlinePlayers.length+" Player(s) Found!",0);
+	
+   }
+}
+
+function downServer() {
+
+
+ var txt=document.getElementById('numofserver').innerHTML;
+ if(System.Gadget.Flyout.show == true)
+	{System.Gadget.Flyout.show = false;}
+ 
+	if(txt == 1){
+		document.getElementById('numofserver').innerHTML = "5";
+		
+	}else{
+		document.getElementById('numofserver').innerHTML = txt-1;
+	} 
+	n = document.getElementById('numofserver').innerHTML;
+    document.getElementById('MyFrame').src="serverfiles/Server"+n+"/server.html";
+	
+}
+function upServer() {
+   var txt=document.getElementById('numofserver').innerHTML;
+   if(System.Gadget.Flyout.show == true)
+	{System.Gadget.Flyout.show = false;}
+ 
+	if(txt == 5){
+		document.getElementById('numofserver').innerHTML = "1";
+		
+	}else if(txt == 1){
+		
+		document.getElementById('numofserver').innerHTML = "2";
+	} else if(txt == 2){
+		
+		document.getElementById('numofserver').innerHTML = "3";
+	} else if(txt ==3){
+		
+		document.getElementById('numofserver').innerHTML = "4";
+	} else{
+		
+		document.getElementById('numofserver').innerHTML = "5";
+	} 
+	n = document.getElementById('numofserver').innerHTML;
+	document.getElementById('MyFrame').src="serverfiles/Server"+n+"/server.html";
+	
+}
+function refreshGadget() {
+	
+   document.getElementById('MyFrame').src="serverfiles/Server"+n+"/server.html";
+   
+}
+
+function OpenList() {
+System.Gadget.Flyout.file = "serverfiles/Server"+n+"/players.html";
+    if(System.Gadget.Flyout.show == false)
+	{System.Gadget.Flyout.show = true;}
+	else{System.Gadget.Flyout.show = false;}
+	
+}
+
+
+function OpenWiki() {
+System.Gadget.Flyout.file = "wiki.html"; 
+    if(System.Gadget.Flyout.show == false)
+	{System.Gadget.Flyout.show = true;}
+	else{System.Gadget.Flyout.show = false;}
+}
+
+
+
+
+	</script>
+
+	</head>
+	<body onload="init()" background="images/mcbg-m.png" bgcolor="black">
+	
+		<BR>
+			<div align="left" style="margin-left:10px;">
+					
+					<iframe id="MyFrame" marginheight="0px"scrolling="auto" style="width:245px; height:115px;" frameBorder="0" src="serverfiles/Server1/server.html"></iframe>
+					
+					
+			
+			<div style="float:right;margin-top:-110px;margin-right:-10px;height:112px; width:50px;">
+			
+				<a href onclick="upServer();" title="Check Next Server Up"><img src="images/uparrow.png" border="0" /></a>
+				<div>
+					<Font size="6" color="white">
+					<div style="margin-left:5px;" id="numofserver">
+					1
+					</div>
+					</Font>
+				</div>
+				<a href onclick="downServer();" title="Check Next Server Down"><img src="images/downarrow.png" border="0" /></a>
+				
+				</div>
+			</div>
+			<div id="buttonbar">
+				<table width="300">
+				<tr>
+				<th><a href onclick="OpenList();" title="List Current Players On Server"><img src="images/listbutton.png" border="0" /></a>
+				<th><a href onclick="minecraft();" title="Launch Minecraft"><img src="images/mclaunchbutton.png" border="0" /></a>
+				<th><a href onclick="OpenWiki();" title="Search Minecraft Wiki"><img src="images/minewiki.png" border="0" /></a>
+				<th><a href onclick="rconsole();"title="Run Rcon"><img src="images/consolebutton.png" border="0" /></a>
+				<th><a href onclick="refresh();" title="Refresh Server Info"><img src="images/refreshbutton.png" border="0" /></a>
+				</tr>
+				</table>
+			</div>
+	</body>
+
+</html>

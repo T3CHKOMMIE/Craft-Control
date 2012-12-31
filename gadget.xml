@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+    <name>Craft-Control</name>
+    <version>3.3.1</version>
+    <author name="Jules Hoehn">
+        <info url="http://t3chkommie.com" />
+		<logo src="images/icon.png" />
+    </author>
+    <copyright>&#169; 2012 T3CHKOMMIE</copyright>
+    <description>Gadget for windows users who want to keep a heads-up on their favorite minecraft servers. Now, you can monitor 5 servers for up to 3 of your mates and get a notification when they are crafting! You can also change the refresh rate of the widget!</description>
+    <icons>
+		<icon height="48" width="48" src="images/icon.png" />
+	</icons>
+	<hosts>
+        <host name="sidebar">
+            <base type="HTML" apiVersion="3.3.1" src="main.html" />
+			
+            <permissions>full</permissions>
+            <platform minPlatformVersion="0.3" />
+			<defaultImage src="images/icon.png" />
+        </host>
+    </hosts>
+</gadget>

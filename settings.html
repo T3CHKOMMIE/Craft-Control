@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="css/settings.css">
+	<script type="text/javascript" src="js/settings.js"></script>
+	
+  </head>
+  <body id="settings" onLoad="main()">
+  <b>Version: 3.3.1</b> &#09;
+	&#09;
+	&#09;
+	Showing Config For
+	&#09;
+		<select id="server" onChange="selectServer();">
+			<option value="Server1">Server 1</option>
+			<option value="Server2">Server 2</option>
+			<option value="Server3">Server 3</option>
+			<option value="Server4">Server 4</option>
+			<option value="Server5">Server 5</option>
+			
+		</select>
+		<br><label>Server Refresh Time In Seconds:     </label><input id="rtime" maxlength="10" size="6" ></input>
+	
+	
+	<div>
+		<pre><hr><label>Change Launcher Button Resource Path</label><br><input id="lpath" size="42" ></input></pre>
+		<pre><label>Change Sound File Path</label><br><input id="spath" size="42" ></input><hr></pre>
+		<div id="Server1">
+			<div style="float:left;">
+				<label for="mon1">URL</label><br>
+				<input id="sn1" type="text" value="t3chkommie.com"></input><br><br>
+				
+			</div>
+			<div style="float:left; padding-left:10px;">
+				<label for="mon1o">PORT</label><br>
+				<input id="sp1" type="text" value="25565" ></input><br><br>
+						
+			</div>
+			
+			<div style="float:left;">
+				<label>Minecraft Name:</label><br>
+				<input id="namep1s1" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep2s1" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep3s1" type="text"></input><br><br>
+				
+				
+			</div>
+			<div style="float:left; padding-left:10px;"><br>
+				<label >Watching: </label>
+				<input type="checkbox" id="watchp1s1" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp2s1" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp3s1" /> <br><br>
+						
+			</div>
+			
+		</div>
+		
+		<div id="Server2">
+			<div style="float:left">
+				<label for="tue1">URL</label><br>
+				<input id="sn2" type="text" value=""></input><br><br>
+				
+			</div>
+			<div style="float:left; padding-left:10px">
+				<label for="tue1o">PORT</label><br>
+				<input id="sp2" type="text" value=""></input><br><br>
+				
+			</div>
+			
+			<div style="float:left;">
+				<label>Minecraft Name:</label><br>
+				<input id="namep1s2" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep2s2" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep3s2" type="text"></input><br><br>
+				
+				
+			</div>
+			<div style="float:left; padding-left:10px;"><br>
+				<label >Watching: </label>
+				<input type="checkbox" id="watchp1s2" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp2s2" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp3s2" /> <br><br>
+						
+			</div>
+		</div>
+		
+		<div id="Server3">
+			<div style="float:left">
+				<label for="wed1">URL</label><br>
+				<input id="sn3" type="text"value=""></input><br><br>
+				
+				
+			</div>
+			<div style="float:left; padding-left:10px">
+				<label for="wed1o">PORT</label><br>
+				<input id="sp3" type="text" value=""></input><br><br>
+							
+			</div>
+			
+			<div style="float:left;">
+				<label>Minecraft Name:</label><br>
+				<input id="namep1s3" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep2s3" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep3s3" type="text"></input><br><br>
+				
+				
+			</div>
+			<div style="float:left; padding-left:10px;"><br>
+				<label >Watching: </label>
+				<input type="checkbox" id="watchp1s3" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp2s3" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp3s3" /> <br><br>
+						
+			</div>
+		</div>
+
+		<div id="Server4">
+			<div style="float:left;">
+				<label for="thu1">URL</label><br>
+				<input id="sn4" type="text" value=""></input><br><br>
+				
+			</div>
+			<div style="float:left; padding-left:10px">
+				<label for="thu1o">PORT</label><br>
+				<input id="sp4" type="text" value=""></input><br><br>
+							
+			</div>
+			
+			<div style="float:left;">
+				<label>Minecraft Name:</label><br>
+				<input id="namep1s4" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep2s4" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep3s4" type="text"></input><br><br>
+				
+				
+			</div>
+			<div style="float:left; padding-left:10px;"><br>
+				<label >Watching: </label>
+				<input type="checkbox" id="watchp1s4" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp2s4" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp3s4" /> <br><br>
+						
+			</div>
+		</div>	
+
+		<div id="Server5">
+			<div style="float:left">
+				<label for="fri1">URL</label><br>
+				<input id="sn5" type="text" value=""></input><br><br>
+				
+			</div>
+			<div style="float:left; padding-left:10px">
+				<label for="fri1o">PORT</label><br>
+				<input id="sp5" type="text" value=""></input><br><br>
+							
+			</div>
+			
+			<div style="float:left;">
+				<label>Minecraft Name:</label><br>
+				<input id="namep1s5" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep2s5" type="text"></input><br><br>
+				<label>Minecraft Name:</label><br>
+				<input id="namep3s5" type="text"></input><br><br>
+				
+				
+			</div>
+			<div style="float:left; padding-left:10px;"><br>
+				<label >Watching: </label>
+				<input type="checkbox" id="watchp1s5" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp2s5" /> <br><br><br>
+				<label>Watching: </label>
+				<input type="checkbox" id="watchp3s5" /> <br><br>
+						
+			</div>
+			
+		</div>	
+		
+	</div>
+	
+  </body>
+</html>

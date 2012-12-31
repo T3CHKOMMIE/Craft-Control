@@ -1,0 +1,28 @@
+﻿* 
+{
+	margin:0px;
+	padding:0px;
+}
+
+body 
+{
+	font: normal 14px/14px Segoe UI, Arial;
+	width: 360px;
+	height: 340px;
+}
+
+p 
+{
+	
+	margin: 10px 0px;
+}
+
+small 
+{
+	font-size:11px;
+}
+
+#Server2, #Server3, #Server4, #Server5
+{
+	display: none;
+}
